@@ -1,0 +1,11 @@
+For this question I wrote two functions to separate the logics, 
+sumOfSquares is for calculation and isHappy is for detecting the same integer that has appeared before. The critical part of this question is to find that there is some loop during the calculation of unhappy numbers.
+
+For example, by getting the happy result 1 from an input 7, you can find no repeated numbers through the process of calculation. 7 square is 49, and then 16 + 81 equals to 97. Following this process we have a list of numbers. But for unhappy numbers, there are loops that you can never exit. For example, 22, 4 + 4 = 8, 8 square is 64, following this process we can get a list of numbers of but at some point we will see 89 twice, we don't have to continue because this loop will never exit, which means 22 is an unhappy number.
+
+So we need a set to keep track of numbers we have seen to detect the repetative cycles.
+While the integer is not in the set, we add this integer and update it to be the sum of the squares. If at any point n becomes 1, we return 1. If we find a number we have already seen before, we return 0.
+
+In the calculation function the res is used to simply accumulate the sum of the squares.
+
+This main function reads a list of integers from the standard input, checks each integer to see if it is a happy number, and prints the result.

@@ -1,0 +1,12 @@
+OOD structure two classes Employee and Organization. We start to add to the structure based on the input. The method addRelationships which takes in a pair of names, this method will be leveraged to construct the tree as we read the input. In the method, we add the employee and handle the inner relationship between these two. 
+
+We need to know which one is the root of all these input pairs. We put all the employees's names into a set because each employee is likely to be the root. A set is used to check if the subordinates exist in the potential set. Under each employee we want to see if this employee has subordinates, and those subordinates can never be the root. At the end of the day, there is only one left in the list which is the root.
+
+For each employee we want to know how far is this employee from the root.  we call the method findDepth recursively and accumulate the depth to get the answer.
+
+Then we wanna know if two employees have the LCA. numFound is a counter to track how many of the desired employees have been found in the current subtree. found will store the node that is potentially the LCA. If both employees are found in different branches of the current node, the current node is the answer. If only one of the employees is found, return the found node. This node will be the LCA if the other employee is found in higher recursive calls. 
+
+We leverage all the methods defined above in the distanceBetweenEmployee() method. We find the root, the LCA, and the depth from the LCA to the employees respectively. We return the sum of these depths that's the levels between these two employees. 
+
+For people at the same level we simply check if the depths are equal, then return the level of 0.  
+
