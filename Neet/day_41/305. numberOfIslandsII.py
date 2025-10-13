@@ -1,36 +1,47 @@
+class UnionFind:
+    def __init__(self):
+        self.parents = dict()
+        self.sizes = dict()
+        self.headcount = 0
+
+    def __contains__(self, key):
+        return key in self.parents
+    
+    def insert(self, row, col):
+        if self.__contains__((row, col)): return
+
+        self.parents[(row, col)] = (row, col)
+        self.sizes[(row, col)] = 1
+        self.headcount += 1
+
+    def find(self, i):
+        while i != self.parents[i]:
+            self.parents[i] = self.find(self.parents[i])
+            i = self.parents[i]
+        return i
+    
+    def union(self, p, q):
+        root_p, root_q = map(self.find, (p, q))
+        if root_p == root_q: return
+        small, big = sorted([root_p, root_q], key=lambda x: self.sizes[x])
+        self.parents[small] = big
+        self.sizes[big] += self.sizes[small]
+        self.headcount -= 1
+
 class Solution:
     def numIslands2(self, m, n, positions):
-        land = [ [0 for _ in range(n)] for _ in range(m) ]
-        for row in land:
-            print(row, end="\n")
-        print("\n\n")
+        uf = UnionFind()
+        num_islands = []
 
-        for position in positions:
-            row, col = position[0], position[1]
-            land[row][col] = 1
+        for row, col in positions:
+            uf.insert(row, col)
+            for rr, cc in [(row+1, col), (row-1, col), (row, col-1), (row, col+1)]:
+                if (rr, cc) not in uf: continue
+                uf.union((row, col), (rr, cc))
+            num_islands.append(uf.headcount)
         
-        for row in land:
-            print(row, end="\n")
-        print("\n\n")
-        
-        row_set, col_set = set([-2]), set([-2])
-        islands = []
-        island = 0
-
-        for row in range(len(land)):
-            for col in range(len(land[0])):
-                if land[row][col] == 1:
-                    if abs(row - max(row_set)) >= 1 and abs(col - max(col_set)) >= 1: 
-                        island += 1
-                    if abs(row - max(row_set)) >= 1 and abs(col - max(col_set)) >= 1: 
-                        island += 1
-                        print(f"Add {row}{col}.")
-                    row_set.add(row)
-                    col_set.add(col)
-                    islands.append(island)
-                    print(f"the current row set is: {row_set}, col_set is {col_set}")
-        print(islands)
-
+        return num_islands
+    
 
 def main():
     solution = Solution()
