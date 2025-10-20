@@ -21,9 +21,6 @@ class Solution:
         print(helper([11]))
         return curr_output
 
-
-
-
 def main():
     solution = Solution()
     n = 4 #1211
