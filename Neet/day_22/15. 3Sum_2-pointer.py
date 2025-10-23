@@ -1,6 +1,5 @@
 # This is the Sliding Window solution for the 3Sum problem.
 from collections import Counter
-
 class Solution:
     def threeSum(self, nums):
         nums.sort()
