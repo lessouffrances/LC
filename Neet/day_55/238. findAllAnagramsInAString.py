@@ -13,12 +13,6 @@ class Solution:
         return res
                 
 
-
-
-
-        
-
-
 def main():
     solution = Solution()
     s = "cbaebabacd"
