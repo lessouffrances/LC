@@ -1,5 +1,5 @@
 from collections import Counter
-from statistics import quantiles
+
 class Solution:
     def expressiveWords(self, s, words) -> int:
         # check if word in words are the same set as s and the counts are less than that
@@ -61,6 +61,6 @@ def main():
     words = ["sa"] #0
 
     s = "aaa"
-    s = ["aaaa"]
+    words = ["aaaa"]
     solution.expressiveWords(s, words)
 main()
