@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <numeric>
+#include <vector>
 
 class Solution {
     public:
@@ -39,7 +40,7 @@ class Solution {
         // 3-prefixes
         std::vector<std::vector<unsigned int>> threePrefixes;
         std::printf("3-prefixes are filled: \n");
-        // for each 1-prefix option, fill the second digit
+        // for each 2-prefix option, fill the thrid digit
         for (size_t i=0; i<twoPrefixes.size(); i++) {
             for (size_t j=0; j<=9; j++) {
                 std::vector<unsigned int> threePrefix = twoPrefixes[i];
@@ -54,7 +55,7 @@ class Solution {
         // 4-prefixes
         std::vector<std::vector<unsigned int>> fourPrefixes;
         std::printf("4-prefixes are filled: \n");
-        // for each 1-prefix option, fill the second digit
+        // for each 3-prefix option, fill the fourth digit
         for (size_t i=0; i<threePrefixes.size(); i++) {
             for (size_t j=0; j<=9; j++) {
                 std::vector<unsigned int> fourPrefix = threePrefixes[i];
@@ -66,14 +67,14 @@ class Solution {
         }
         std::printf("There are %zu 4-prefixes in total.\n\n", fourPrefixes.size());
         
-        unsigned int res;
+        unsigned int res = 0;
         for (const std::vector<unsigned int> fourPrefix : fourPrefixes) {
             unsigned int sum = std::accumulate(fourPrefix.begin(), fourPrefix.end(), 0u);
             if (sum == S) {
                 res += 1;
             }
         }
-        std::printf("%d\n", res);
+
         return res;
     }
 };
@@ -81,8 +82,31 @@ class Solution {
 int main()
 {
     Solution solution = Solution();
-    const int S = 35;
-    solution.fourDigitSum(S);
+
+    struct TestObject {
+        int S;
+        int res;
+    };
+
+    std::vector<TestObject> testCases = {
+        { 35, 4 }, // happy path
+        { 0, 1 } , // edge case 1
+        { 36, 1 } , // edge case 2
+        { 4, 35 }
+    };
+    
+    bool failed = false;
+    for (size_t i=0; i<testCases.size(); i++) {
+        if (solution.fourDigitSum(testCases[i].S) != testCases[i].res) {
+            failed = true;
+            std::printf("The %zu th test case failed.\n", i+1);
+            std::printf("The expected is %0u but actual is %0u\n", testCases[i].S, testCases[i].res);
+        }
+    }
+
+    if (!failed) {
+        std::printf("All %zu test cases have been successfully passed.\n", testCases.size());
+    }
     return 0;
 } 
 
