@@ -13,6 +13,14 @@ class Solution {
         if (board.find('C') == std::string::npos) {
             return 0;
         }
+        
+        std::set<char> charSet;
+        for (char c : board) {
+            charSet.insert(c);
+        }
+        if (charSet != {'.', 'T', 'C'}) {
+            return -1;
+        } 
 
         std::vector<char> boardVec(board.begin(), board.end());
         int res = 0;
