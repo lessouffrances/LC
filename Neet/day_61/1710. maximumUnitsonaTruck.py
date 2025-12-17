@@ -13,12 +13,6 @@ class Solution:
         print(res)
         return res
 
-
-
-
-
-
-
 def main():
     solution = Solution()
     boxTypes = [[1,3],[2,2],[3,1]]

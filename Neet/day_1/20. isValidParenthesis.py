@@ -11,7 +11,6 @@ class Solution:
                     return False
             else: 
                 stack.append(char)
-
         return True if not stack else False
 
 def main():

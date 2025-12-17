@@ -19,7 +19,7 @@ class Solution:
                 
                     else:
                         dp[r][c] = min(dp[r-1][c], dp[r-1][c-1], dp[r][c-1])+1
-            
+                    
         
         for row in dp:
             print(row, end="\n")

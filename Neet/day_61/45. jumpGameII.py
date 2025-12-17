@@ -10,16 +10,12 @@ class Solution:
             else:
                 dp[i] = 1+min(dp[ i+1: i+nums[i]+1 ])
 
-
         print(dp)
-
-
 
 def main():
     solution = Solution()
     nums = [2,3,1,1,4] #2
     nums = [2,3,0,1,4] #2
-
 
     solution.jump(nums)
 main()
