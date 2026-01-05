@@ -24,10 +24,11 @@ class Solution
         while (!q.empty()) {
             int size = q.size();
             bool rotted = false;
-            
+
             for (int i=0; i<size; i++) {
                 auto [r, c] = q.front();
                 q.pop(); 
+
                 for (auto& DIR : DIRS) {
                     int newR = r+DIR.first;
                     int newC = c+DIR.second;
@@ -41,6 +42,8 @@ class Solution
                     rotted = true;
                 }
             }
+            if (rotted) minutes++;
         }
+        return freshCount == 0 ? minutes : -1;
     }
 };
