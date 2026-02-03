@@ -28,7 +28,7 @@ class Solution
             if (obstacleGrid[newR][newC] != 0) continue;
             numOfPaths += dfs(newR, newC, obstacleGrid, memo);
         }
-        
+
         memo[row][col] = numOfPaths;
         return numOfPaths;
     }
