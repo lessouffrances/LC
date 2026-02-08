@@ -1,7 +1,7 @@
 
 
 
-//           s
+//                s
 // 1 -> 2 -> 3 -> 3 -> 2 -> 1
 
 class Solution 
@@ -11,24 +11,25 @@ class Solution
     {
         // find middle
         ListNode* slow = head;
-        ListNode* fast = head->next;
+        ListNode* fast = head;
         while (fast && fast->next) {
             slow = slow->next;
             fast = fast->next->next;
         }
 
-        // cut at middle
-        ListNode* secondPtr = slow->next;
-        slow->next = nullptr;
-
-        // reverse the 2ns half
-        ListNode* second = reverseLinkedList(secondPtr);
+        // reverse the 2nd half
+        ListNode* second = reverseLinkedList(slow);
 
         // compare value
-        
+        while (second) {
+            if (second->val != head->val) {
+                return false;
+            }
+            second = second->next;
+            head = head->next;
+        }
 
-
-        
+        return true;
     }
     private:
     ListNode* reverseLinkedList(ListNode* head)

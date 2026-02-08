@@ -19,6 +19,7 @@ class Solution
     public:
     int arrangeCoins(int n) 
     {
+        return arrangeCoinsHelper(1, n);
 
     }
     private:
