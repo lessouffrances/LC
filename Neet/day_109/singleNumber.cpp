@@ -1,0 +1,25 @@
+
+
+
+
+
+
+// a ^ a = 0
+// a ^ 0 = a
+
+
+class Solution 
+{
+    public:
+    int singleNumber(vector<int>& nums) 
+    {
+        if (nums.empty()) return 0;
+
+        int n = nums.size();
+        int res = nums[0];
+        for (int i=1; i<n; i++) {
+            res ^= nums[i];
+        }
+        return res;
+    }
+};
