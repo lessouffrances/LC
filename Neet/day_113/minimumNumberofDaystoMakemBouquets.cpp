@@ -1,0 +1,41 @@
+class Solution 
+{
+    public:
+    int minDays(vector<int>& bloomDay, int m, int k) 
+    {
+        if (bloomDay.empty()) return 0;
+
+        if (bloomDay.size() < (long long)m * k) return -1;
+        int left = *min_element(bloomDay.begin(), bloomDay.end());
+        int right = *max_element(bloomDay.begin(), bloomDay.end());
+
+        while (left <= right) {
+            int daysWait = left + (right-left)/2;
+            if (canMakeAllBouquets(bloomDay, m, k, daysWait)) {
+                right = daysWait-1;
+            } else {
+                left = daysWait+1;
+            }
+        }
+        return left;
+    }
+    private:
+    bool canMakeAllBouquets(vector<int>& bloomDay, int m, int k, int daysWait)
+    {
+        int totalBouquetsMade = 0;
+        int flowersBloomed = 0;
+
+        for (int day : bloomDay) {
+            if (day <= daysWait) {
+                flowersBloomed++;
+                if (flowersBloomed == k) {
+                    totalBouquetsMade++;
+                    flowersBloomed = 0; // reset
+                }
+            } else {
+                flowersBloomed = 0;
+            }
+        }
+        return totalBouquetsMade >= m;
+    }
+};
