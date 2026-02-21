@@ -1,0 +1,20 @@
+class Solution 
+{
+    public:
+    vector<int> findDuplicates(vector<int>& nums) 
+    {
+        if (nums.empty()) return {};
+
+        int maxi = *max_element(nums.begin(), nums.end());
+        vector<int>counter(maxi+1, 0);
+
+        vector<int> res;
+        for (int num : nums) {
+            counter[num]++;
+            if (counter[num] == 2) {
+                res.push_back(num);
+            }
+        }
+        return res;
+    }
+};
