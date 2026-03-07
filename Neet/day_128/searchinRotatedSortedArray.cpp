@@ -21,7 +21,7 @@ class Solution
             if (nums[mid] >= nums[left]) {
                 // left half is sorted
                 // check if target is inside this range
-                if (nums[left] <= target && nums[mid] > target) {
+                if (target >= nums[left] && target < nums[mid]) {
                     right = mid-1;
                 } else {
                     left = mid+1;
@@ -35,9 +35,8 @@ class Solution
                 } else {
                     right = mid-1;
                 }
-
             }
         }
-        return left;
+        return -1;
     }
 };
