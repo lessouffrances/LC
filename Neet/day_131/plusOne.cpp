@@ -1,0 +1,27 @@
+
+
+
+
+
+// Time: O(N), N is the size of the digits
+// Space: O(1)
+class Solution 
+{
+    public:
+    vector<int> plusOne(vector<int>& digits) 
+    {
+        if (digits.empty()) return {};
+        int n = digits.size();
+
+        for (int i=n-1; i>=0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            } 
+
+            digits[i] = 0;
+        }
+        digits.insert(digits.begin(), 1);
+        return digits;
+    }
+};
