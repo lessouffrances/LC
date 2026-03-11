@@ -1,0 +1,24 @@
+
+
+
+// nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+//            w
+//               r 
+
+class Solution 
+{
+    public:
+    int removeDuplicates(vector<int>& nums) 
+    {
+        if (nums.empty()) return 0;
+        int n = nums.size();
+
+        int write = 0;
+        for (int read=0; read<n; read++) {
+            if (read>0 && nums[read] == nums[read-1]) continue;
+            nums[write] = nums[read];
+            write++;
+        }
+        return nums;
+    }
+};
