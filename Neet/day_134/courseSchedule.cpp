@@ -4,7 +4,6 @@ class Solution
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) 
     {
         if (prerequisites.empty()) return true;   
-
         buildGraph(numCourses, prerequisites);
 
         // FULL DFS 
