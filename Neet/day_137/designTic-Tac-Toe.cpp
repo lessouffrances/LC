@@ -1,3 +1,8 @@
+
+
+// Time: O(1)
+// Space: O(N)
+
 class TicTacToe 
 {
     public:
