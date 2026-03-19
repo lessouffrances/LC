@@ -1,7 +1,7 @@
 
 
 // Time: O(M + N)
-// Space: O(M + N)
+// Space: O(1), space is constant
 class Solution 
 {
     public:
