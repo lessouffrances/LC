@@ -1,6 +1,6 @@
 
 
-// Time: O()
+// Time: O(M logN)
 // M for total number of nodes, and N for the number of LL
 // Space: O(log N)
 
