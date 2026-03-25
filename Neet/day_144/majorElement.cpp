@@ -1,7 +1,7 @@
 
 
 
-// Time: O(N)
+// Time: O()
 // Space: O(1)
 class Solution 
 {
