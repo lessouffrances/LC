@@ -41,7 +41,7 @@ class Solution
             res += ch;
 
             // if more than 2 left for this char
-            if (count > 1) {
+            if (count >= 1) {
                 q.push( {count-1, time+2, ch} );
             }
 
