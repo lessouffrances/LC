@@ -1,5 +1,6 @@
 
-
+// Time: O(N)
+// Space: O(N)
 
 class Solution 
 {
