@@ -7,6 +7,7 @@ class Solution
     public:
     vector<int> getConcatenation(vector<int>& nums) 
     {
+        // copy
         vector<int> copyNums = nums;
         for (int num : copyNums) {
             nums.push_back(num);
