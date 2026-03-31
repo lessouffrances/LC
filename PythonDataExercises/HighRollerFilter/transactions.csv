@@ -1,0 +1,10 @@
+date,customer_id,description,amount,type
+2024-01-05,C001,Direct deposit,3200.00,credit
+2024-01-07,C001,Rent,-1500.00,debit
+2024-01-10,C002,Grocery store,-87.45,debit
+2024-01-12,C002,Freelance payment,4500.00,credit
+2024-01-15,C003,Electric bill,-112.30,debit
+2024-01-20,C003,ATM withdrawal,-200.00,debit
+2024-01-22,C004,Salary,6200.00,credit
+2024-01-25,C004,Car payment,-450.00,debit
+2024-01-28,C005,Transfer,-90.00,debit
