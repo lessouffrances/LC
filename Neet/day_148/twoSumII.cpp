@@ -1,6 +1,9 @@
 
 
 
+// Time: O(N)
+// Space: O(1)
+
 class Solution 
 {
     public:
@@ -21,5 +24,6 @@ class Solution
                 left++;
             }
         }
+        return {-1, -1};
     }
 };
