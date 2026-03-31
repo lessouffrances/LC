@@ -1,0 +1,29 @@
+{
+  "clients": [
+    {
+      "id": "P001",
+      "name": "Alice Wang",
+      "holdings": [
+        {"ticker": "AAPL", "shares": 10, "purchase_price": 150.00},
+        {"ticker": "GOOGL", "shares": 5, "purchase_price": 2800.00},
+        {"ticker": "TSLA", "shares": 8, "purchase_price": 700.00}
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "Bob Smith",
+      "holdings": [
+        {"ticker": "AAPL", "shares": 20, "purchase_price": 155.00},
+        {"ticker": "MSFT", "shares": 15, "purchase_price": 300.00}
+      ]
+    },
+    {
+      "id": "P003",
+      "name": "Carol Lee",
+      "holdings": [
+        {"ticker": "TSLA", "shares": 3, "purchase_price": 720.00},
+        {"ticker": "MSFT", "shares": 10, "purchase_price": 310.00}
+      ]
+    }
+  ]
+}
