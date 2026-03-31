@@ -1,0 +1,9 @@
+{
+  "customers": [
+    {"id": "C001", "name": "Alice Wang", "account_type": "checking", "balance": 4200.00},
+    {"id": "C002", "name": "Bob Smith",  "account_type": "savings",  "balance": 15800.50},
+    {"id": "C003", "name": "Carol Lee",  "account_type": "checking", "balance": 730.20},
+    {"id": "C004", "name": "David Kim",  "account_type": "savings",  "balance": 9100.00},
+    {"id": "C005", "name": "Eve Chen",   "account_type": "checking", "balance": 290.75}
+  ]
+}
