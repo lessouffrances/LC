@@ -1,0 +1,7 @@
+date,description,amount,type
+2024-01-05,Direct deposit,3200.00,credit
+2024-01-07,Rent,-1500.00,debit
+2024-01-10,Grocery store,-87.45,debit
+2024-01-12,Freelance payment,950.00,credit
+2024-01-15,Electric bill,-112.30,debit
+2024-01-20,ATM withdrawal,-200.00,debit
