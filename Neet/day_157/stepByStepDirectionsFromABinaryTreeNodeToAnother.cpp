@@ -24,7 +24,7 @@ class Solution
     // preorder to find the path from lca to the node
     bool dfs(TreeNode* node, int target, string& currPath)
     {
-        if (!node) return "";
+        if (!node) return false;
         if (node->val == target) return true;
 
         // go left 
