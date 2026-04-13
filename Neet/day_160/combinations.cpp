@@ -20,6 +20,9 @@ class Solution
             res.push_back(currPath);
             return;
         }
+
+        // prune
+        if (currNum > n - (k - currSize) + 1) return;
         if (currNum > n) return;
 
         // take the currNum
