@@ -18,7 +18,9 @@ class Solution(object):
         left = self.dfs(node.left, p)
         if left:
             return left
-        prev = node
+        if self.prev == p:
+            return node
+        self.prev = node
         return self.dfs(node.right, p)
 
         
