@@ -14,7 +14,6 @@ class Solution
     {
         if (!root) return nullptr;
         return dfs(root, p);
-
     }
 
     private:
