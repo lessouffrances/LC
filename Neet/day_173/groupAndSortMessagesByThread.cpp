@@ -83,3 +83,11 @@ class Solution
             return res;
     }
 };
+
+def main():
+    timeStamp = [102, 104, 100, 103, 101]
+    replyTo = [-1, 0, -1, 2, 2]
+    messageText = ["NewProjectUpdate", "GreatProgress", "MeetingAt3AM", "CanYouReschedule", "SoundsGood"]
+    res = Solution().groupMessages(timeStamp, replyTo, messageText)
+    print(res)
+main()
