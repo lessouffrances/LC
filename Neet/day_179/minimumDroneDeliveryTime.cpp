@@ -34,7 +34,7 @@ class Solution
             if (transitionTime.empty() || requestedHubs.empty()) return 0;
 
             vector<int> hubs(requestedHubs.size());
-            for (int i = 0; i < (int)requestedHubs.size(); i++) {
+            for (int i=0; i<requestedHubs.size(); i++) {
                 hubs[i] = requestedHubs[i] - 1;
             }
 
