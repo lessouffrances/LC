@@ -27,7 +27,6 @@
 // → after 2 copies: 'a'×4 ≥ 3, 'b'×2 ≥ 2, 'c'×2 ≥ 2 ✓
 // Output: "aabc"
 
-
 // Function Description:
 // string getBaseSegment(int segmentSize, string missingData)
 // Returns: the lexicographically smallest baseSegment of length segmentSize whose 
@@ -37,3 +36,88 @@
 // 1 ≤ segmentSize ≤ 2×10⁵
 // 1 ≤ |missingData| ≤ 2×10⁵
 // missingData only contains lowercase English letters 'a' to 'z'
+
+
+class Solution
+{
+    public:
+    string getBaseSegment(int segmentSize, const string& missingData)
+    {
+        vector<int> freq(26, 0);
+        int maxFreq = 0;
+
+        // Count frequency of each character
+        for (char ch : missingData)
+        {
+            freq[ch - 'a']++;
+            maxFreq = max(maxFreq, freq[ch - 'a']);
+        }
+
+        // Binary search minimum number of replications
+        int lo = 1, hi = maxFreq;
+        int ansK = -1;
+
+        while (lo <= hi)
+        {
+            int mid = lo + (hi - lo) / 2;
+
+            if (isFeasible(mid, freq, segmentSize))
+            {
+                ansK = mid;
+                hi = mid - 1;
+            }
+            else
+            {
+                lo = mid + 1;
+            }
+        }
+
+        // No valid base segment
+        if (ansK == -1)
+        {
+            return "-1";
+        }
+
+        // Build lexicographically smallest answer
+        vector<int> need(26, 0);
+        int used = 0;
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (freq[i] > 0)
+            {
+                need[i] = (freq[i] + ansK - 1) / ansK;
+                used += need[i];
+            }
+        }
+
+        // Fill remaining positions with 'a'
+        need[0] += (segmentSize - used);
+
+        string result;
+
+        for (int i = 0; i < 26; i++)
+        {
+            result.append(need[i], char('a' + i));
+        }
+
+        return result;
+    }
+    
+    private:
+    bool isFeasible(int k, const vector<int>& freq, int segmentSize)
+    {
+        long long needed = 0;
+
+        for (int f : freq)
+        {
+            if (f > 0)
+            {
+                // Minimum count needed in one segment
+                needed += (f + k - 1) / k;
+            }
+        }
+
+        return needed <= segmentSize;
+    }
+};
