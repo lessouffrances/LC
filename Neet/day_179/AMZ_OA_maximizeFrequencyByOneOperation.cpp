@@ -29,6 +29,15 @@
 // The operation is optional (you can choose not to apply it)
 // Only one contiguous subarray can be modified
 
+
+// Simplify as:
+// Maximize Frequency of k
+// Given an integer array values and integer k, you may add any integer x to all elements of at most one contiguous subarray. Return the maximum possible frequency of k in the resulting array.
+// Example:
+// values = [2,3,2,4,3,2], k = 2
+// Add x=-2 to subarray [4,3] → [2,3,2,2,1,2]
+// Output: 4
+
 class Solution
 {
     int maximizeFrequency(vector<int>& values, int k)

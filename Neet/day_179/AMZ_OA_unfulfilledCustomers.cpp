@@ -22,6 +22,14 @@
 // int totalInventory: total number of items available for allocation
 // Returns: list of customer IDs who received no items.
 
+// Simplify as:
+// Unfulfilled Customers
+// Given a list of requests [customerId, quantity, bidAmount, timestamp] and a totalInventory, allocate items by highest bid first. Ties are broken by round-robin in timestamp order (one item per customer per round) until inventory runs out or all quantities are fulfilled. Return the IDs of customers who received no items.
+// Example:
+// requests=[[1,5,5,0],[2,7,8,1],[3,7,5,1],[4,10,3,3]], totalInventory=18
+// Customers 1,2,3 exhaust inventory → customer 4 gets nothing
+// Output: [4]
+
 struct Request
 {
     // customerId, quantity, bidAmount, timestamp

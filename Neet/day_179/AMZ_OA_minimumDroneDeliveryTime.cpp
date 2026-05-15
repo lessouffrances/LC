@@ -26,6 +26,15 @@
 
 // Returns: int — the minimum total travel time to fulfill all requests
 
+// Simplify as:
+// Minimum Drone Delivery Travel Time
+// Given m hubs arranged in a circular ring where transitionTime[i] is the travel time between hub i and hub i+1, and a sequence of requestedHubs to visit in order, return the minimum total travel time starting from Hub 1.
+// At each step, choose the shorter path (clockwise or counterclockwise) between the current hub and the next.
+// Example:
+// m=3, transitionTime=[3,2,1], requestedHubs=[1,3,3,2]
+// 0 + 3 + 0 + 1 = 4
+// Output: 4
+
 class Solution
 {
     public:

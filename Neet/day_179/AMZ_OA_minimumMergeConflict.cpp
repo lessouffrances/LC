@@ -31,6 +31,15 @@
 // Input: primary = "dae", secondary = "add"
 // Output: 1
 
+// Simplify as:
+// Minimum Merge Conflicts
+// Given two strings primary and secondary representing commit sequences, merge them into one string preserving the relative order of each. A conflict occurs when a lower-priority character (higher alphabetical order) appears before a higher-priority one in the merged result. Return the minimum number of conflicts across all valid merges.
+// Example:
+// primary="zc", secondary="d"
+// Best merge: "zcd" or "dzc" → 2 conflicts
+// Output: 2
+// Constraints: 1 ≤ |primary|, |secondary| ≤ 1000, lowercase letters only.
+
 class Solution
 {
     public:
