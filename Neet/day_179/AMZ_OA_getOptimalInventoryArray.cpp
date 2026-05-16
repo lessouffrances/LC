@@ -35,21 +35,10 @@
 // quality = [7,7,5,7,3,5,3]
 // Replace 5→7 (cost 2), Replace 3→7 (cost 2)
 // Output: 4
-// Key insight: minimum cost = n - max_frequency.
 
 class Solution {
     public:
     int getMinAmount(vector<int>& quality) {
-        unordered_map<int, int> freq;
-        for (int q : quality) {
-            freq[q]++;
-        }
-        
-        int maxFreq = 0;
-        for (auto& [val, count] : freq) {
-            maxFreq = max(maxFreq, count);
-        }
-    
-        return quality.size() - maxFreq;
+       
     }
 };
