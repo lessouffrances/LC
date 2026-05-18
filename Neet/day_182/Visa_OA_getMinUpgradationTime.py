@@ -43,7 +43,7 @@ class Solution:
             if self.canFinish(mid, t1, t2, req1, req2, lcm):
                 hi = mid
             else:
-                lo = mid + 1
+                lo = mid+1
         return lo
 
     def canFinish(self, T, t1, t2, req1, req2, lcm) -> bool:
