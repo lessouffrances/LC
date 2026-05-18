@@ -1,5 +1,6 @@
 # Question 3 — Neural Network Equal Layers
-# A neural network has n layers, where the number of neurons in the j<sup>th</sup> layer is layer[j]. In each generation, the system adjusts the neurons as follows:
+# A neural network has n layers, where the number of neurons in the j-th layer is layer[j]. 
+# In each generation, the system adjusts the neurons as follows:
 
 # In odd generations: 1 neuron can be added to at most one layer
 # In even generations: 2 neurons can be added to at most one layer
