@@ -41,7 +41,6 @@ class Solution
     }
 };
 
-
 // Optimized Solution
 // only 1 & 1 will remain.
 class Solution
@@ -52,7 +51,6 @@ class Solution
         long res = 0;
 
         int consecutive = 0;
-
         for (int i=n-1; i>=0; i--) {
             if (arr[i] == 1) {
                 consecutive++;
@@ -64,4 +62,5 @@ class Solution
         return res;
     }
 };
+
 
