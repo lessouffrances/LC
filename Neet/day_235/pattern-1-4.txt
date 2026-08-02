@@ -1,0 +1,26 @@
+Pattern 1 — Pre-order, carry info down
+199. Binary Tree Right Side View
+Left Side View (mirror variant, no official LC number used here)
+515. Find Largest Value in Each Tree Row
+513. Find Bottom Left Tree Value
+987. Vertical Order Traversal of a Binary Tree
+
+Pattern 2/3 — Post-order, combine children (+ global side channel)
+104. Maximum Depth of Binary Tree
+543. Diameter of Binary Tree
+124. Binary Tree Maximum Path Sum
+110. Balanced Binary Tree (sentinel -1 short-circuit)
+687. Longest Univalue Path
+337. House Robber III (dual-return pair)
+1372. Longest ZigZag Path in a Binary Tree
+968. Binary Tree Cameras (three-state post-order)
+
+(You also redid the whole 104 → 968 arc a second time for review.)
+
+Pattern 4 — Pre-order with backtracking (path mutation)
+112. Path Sum (boolean, no backtracking needed — value semantics)
+113. Path Sum II (vector, reference — needs push_back/pop_back)
+129. Sum Root to Leaf Numbers (value semantics, no backtracking)
+257. Binary Tree Paths (string — did both value-copy version and reference+resize version)
+988. Smallest String Starting From Leaf (reversal-at-leaf twist)
+437. Path Sum III (hardest — prefix-sum + hash map backtracking, long long overflow fix)
