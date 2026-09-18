@@ -4,7 +4,7 @@ class Solution
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) 
     {
         vector<int> currPath = {};
-        dfs(root, 0, targetSum);
+        dfs(root, 0, currPath, targetSum);
         return res;
     }
 
