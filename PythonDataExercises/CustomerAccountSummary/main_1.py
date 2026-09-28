@@ -15,7 +15,6 @@
 # - Prints the total balance for that account type
 
 # **Example output for `account_type="checking"`:**
-
 # Checking accounts:
 #   Alice Wang       4200.00
 #   Carol Lee         730.20
@@ -62,13 +61,8 @@ def print_out_get_account_summary(customer_map, account_type):
         total_balance = info[2]
         account_type_global_balance += total_balance
         print(f"   {name} : {total_balance:.2f}", end='\n')
-
     print(f"Total: {account_type_global_balance:.2f}")
 
-
-
 def main():
-
     get_account_summary(filepath='customers.json', account_type='checking')
-
 main()
