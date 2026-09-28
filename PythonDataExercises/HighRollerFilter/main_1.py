@@ -1,5 +1,4 @@
 # Write a function high_value_customers(customers_filepath, transactions_filepath, threshold) that:
-
 # Loads the customers JSON
 # Loads the transactions CSV
 # For each customer ID, computes their net balance from transactions (credits minus debits)
@@ -9,10 +8,10 @@ import csv
 import json
 
 def process_transactions(transactions_filepath) -> dict[str, float]:
-    '''
+    """
     process transactions, and return a transaction map where,
     customer_id : net_balance
-    '''
+    """
 
     with open(transactions_filepath, newline='') as f:
         reader = csv.DictReader(f)
@@ -57,7 +56,6 @@ def high_value_customers(customers_filepath, transactions_filepath, threshold):
         if net > threshold:
             name = identity_map[id]
             print(f"   {name} : {net:.2f}")
-
 
 def main():
     process_transactions(transactions_filepath='transactions.csv')
